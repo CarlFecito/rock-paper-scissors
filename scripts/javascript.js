@@ -1,13 +1,15 @@
 function computerPlay() {
     let computerPick = Math.floor(Math.random() * 3) + 1
     if (computerPick == 1) {
-        console.log(`Rock`)
+        return `rock`
     } else if (computerPick == 2) {
-        console.log(`Paper`)
+        return `paper`
     } else {
-        console.log(`Scissors`)
+        return `scissors`
     }
 }
+
+let computerSelecion = computerPlay()
 
 function playRound(playerSelection, computerSelecion) {
     if (playerSelection == computerSelecion) {
@@ -24,5 +26,5 @@ function playRound(playerSelection, computerSelecion) {
         console.log(`You Lose! Rock beats Scissors`)
     } else if (playerSelection == `scissors` && computerSelecion == `paper`) {
         console.log(`You Win! Scissors beats Paper`)
-    }
+    } else console.log(`Error`)
 }
