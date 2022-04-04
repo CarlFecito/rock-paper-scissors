@@ -28,3 +28,9 @@ function playRound(playerSelection, computerSelecion) {
         console.log(`You Win! Scissors beats Paper`)
     } else console.log(`Error`)
 }
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound(prompt(`pick your hand`, ``), computerSelecion)
+    }
+}
