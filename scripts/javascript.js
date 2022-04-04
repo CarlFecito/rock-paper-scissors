@@ -9,28 +9,42 @@ function computerPlay() {
     }
 }
 
-let computerSelecion = computerPlay()
+    let playerScore = 0
+    let computerScore = 0
 
 function playRound(playerSelection, computerSelecion) {
     if (playerSelection == computerSelecion) {
-        console.log(`It's a Tie`)
+        alert(`It's a Tie`)
+        return null
     } else if (playerSelection == `rock` && computerSelecion == `paper`) {
-        console.log(`You Lose! Paper beats Rock`)
+        alert(`You Lose`)
+        computerScore++
     } else if (playerSelection == `rock` && computerSelecion == `scissors`) {
-        console.log(`You Win! Rock beats Scissors`)
+        alert(`You Win`)
+        playerScore++
     }   else if (playerSelection == `paper` && computerSelecion == `scissors`) {
-        console.log(`You Lose! Scissors beats Paper`)
+        alert(`You Lose`)
+        computerScore++
     } else if (playerSelection == `paper` && computerSelecion == `rock`) {
-        console.log(`You Win! Paper beats Rock`)
+        alert(`You Win`)
+        playerScore++
     } else if (playerSelection == `scissors` && computerSelecion == `rock`) {
-        console.log(`You Lose! Rock beats Scissors`)
+        alert(`You Lose`)
+        computerScore++
     } else if (playerSelection == `scissors` && computerSelecion == `paper`) {
-        console.log(`You Win! Scissors beats Paper`)
+        alert(`You Win`)
+        playerScore++
     } else console.log(`Error`)
 }
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        playRound(prompt(`pick your hand`, ``), computerSelecion)
+        playRound(prompt(`pick your hand`, ``), computerPlay())
+    }
+    if (computerScore == playerScore) {
+        alert(`COMPUTER: ` + computerScore + `    ` + `PLAYER: ` + playerScore + `     ` + `It's a Tie`)
+    } else if (computerScore > playerScore) {
+        alert(`COMPUTER: ` + computerScore + `    ` + `PLAYER: ` + playerScore + `     ` + `Computer Wins`)
+    } else {alert(`COMPUTER: ` + computerScore + `    ` + `PLAYER: ` + playerScore + `     ` + `Player Wins`)
     }
 }
