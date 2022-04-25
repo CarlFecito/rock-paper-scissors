@@ -1,4 +1,6 @@
-
+function pick(pck) {
+	playRound(pck, computerPlay())
+}
 
 function computerPlay() {
     let computerPick = Math.floor(Math.random() * 3) + 1
@@ -10,11 +12,6 @@ function computerPlay() {
         return `scissors`
     }
 }
-
-/* 
-    let playerScore = 0
-    let computerScore = 0
-*/
 
 function playRound(playerSelection, computerSelecion) {
     if (playerSelection == computerSelecion) {
@@ -40,15 +37,3 @@ function playRound(playerSelection, computerSelecion) {
         playerScore++
     } else console.log(`Error`)
 }
-
-/*function game() { //five round game
-    for (let i = 0; i < 5; i++) {
-        playRound(prompt(`pick your hand`, ``), computerPlay())
-    }
-    if (computerScore == playerScore) {
-        alert(`COMPUTER: ` + computerScore + `    ` + `PLAYER: ` + playerScore + `     ` + `It's a Tie`)
-    } else if (computerScore > playerScore) {
-        alert(`COMPUTER: ` + computerScore + `    ` + `PLAYER: ` + playerScore + `     ` + `Computer Wins`)
-    } else {alert(`COMPUTER: ` + computerScore + `    ` + `PLAYER: ` + playerScore + `     ` + `Player Wins`)
-    }
-}*/
