@@ -1,3 +1,5 @@
+
+
 function computerPlay() {
     let computerPick = Math.floor(Math.random() * 3) + 1
     if (computerPick == 1) {
@@ -9,8 +11,10 @@ function computerPlay() {
     }
 }
 
+/* 
     let playerScore = 0
     let computerScore = 0
+*/
 
 function playRound(playerSelection, computerSelecion) {
     if (playerSelection == computerSelecion) {
@@ -37,7 +41,7 @@ function playRound(playerSelection, computerSelecion) {
     } else console.log(`Error`)
 }
 
-function game() {
+/*function game() { //five round game
     for (let i = 0; i < 5; i++) {
         playRound(prompt(`pick your hand`, ``), computerPlay())
     }
@@ -47,4 +51,4 @@ function game() {
         alert(`COMPUTER: ` + computerScore + `    ` + `PLAYER: ` + playerScore + `     ` + `Computer Wins`)
     } else {alert(`COMPUTER: ` + computerScore + `    ` + `PLAYER: ` + playerScore + `     ` + `Player Wins`)
     }
-}
+}*/
