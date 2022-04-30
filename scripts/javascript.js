@@ -1,38 +1,38 @@
-function pick(pck) {
-	playRound(pck, computerPlay())
-}
+let playerSelection
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', function(){{playRound(button.id)}});
+});
 
 function computerPlay() {
-    let computerPick = Math.floor(Math.random() * 3) + 1
-    if (computerPick == 1) {
+    let computerPick = Math.floor(Math.random() * 3)
+    if (computerPick == 0) {
         return `rock`
-    } else if (computerPick == 2) {
+    } else if (computerPick == 1) {
         return `paper`
     } else {
         return `scissors`
     }
 }
 
-function playRound(playerSelection, computerSelecion) {
-    if (playerSelection == computerSelecion) {
-        alert(`It's a Tie`)
-        return null
-    } else if (playerSelection == `rock` && computerSelecion == `paper`) {
-        alert(`You Lose`)
-        computerScore++
-    } else if (playerSelection == `rock` && computerSelecion == `scissors`) {
-        alert(`You Win`)
-        playerScore++
-    }   else if (playerSelection == `paper` && computerSelecion == `scissors`) {
-        alert(`You Lose`)
-        computerScore++
-    } else if (playerSelection == `paper` && computerSelecion == `rock`) {
-        alert(`You Win`)
-        playerScore++
-    } else if (playerSelection == `scissors` && computerSelecion == `rock`) {
-        alert(`You Lose`)
-        computerScore++
-    } else if (playerSelection == `scissors` && computerSelecion == `paper`) {
+function playRound(playerSelection) {
+		let computerSelecion = computerPlay()
+    if (playerSelection === computerSelecion) {
+      alert(`It's a Tie`)
+      return null
+    } else if (
+      (playerSelection === `rock` && computerSelecion === `paper`) ||
+			(playerSelection === `scissors` && computerSelecion === `rock`) || 
+			(playerSelection === `paper` && computerSelecion === `scissors`)
+		) {
+      alert(`You Lose`)
+      computerScore++
+    } else if (
+			 (playerSelection == `rock` && computerSelecion == `scissors`) || 
+			 (playerSelection == `scissors` && computerSelecion == `paper`) || 
+			 (playerSelection == `paper` && computerSelecion == `rock`)
+		) {
         alert(`You Win`)
         playerScore++
     } else console.log(`Error`)
