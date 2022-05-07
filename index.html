@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="scripts/javascript.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>Rock Paper Scissors</title>
 </head>
 <body>
-	<header >
-		ROCK PAPER SCISSORS
-	</header>
-  <div class="container">
-		<div class="info">
-					CHOOSE YOUR WEAPON
-		</div>
+	<h1>Rock Paper Scissors</h1>
 
-		<div class="btns">
-			<button id="rock" class="btn"><img src="img/rock.png" alt="ROCK"></button> 
-			<button id="paper" class="btn"><img src="img/paper.png" alt="PAPER"></button>
-			<button id="scissors" class="btn"><img src="img/scissors.png" alt="SCISSORS"></button>
+	<h2>Round</h2>
+	<div class="top">
+		<div class="left">
+			<div>PLAYER</div>
+			<div id="pPick"></div>
+			<div id="pScore"></div>
 		</div>
-		
-		<div class="round">
-			<div class="result"></div>
-			<div class="winner"></div>
-				<div class="cont">
-					<div class="left">
-						<div class="player"></div>
-					</div>
-					<div class="right">
-						<div class="computer"></div>
-					</div>
-				</div>
-			</div>
+		<div class="right">
+			<div>COMPUTER</div>
+			<div id="cPick"></div>
+			<div id="cScore"></div>
 		</div>
-  </div>
-	<div class="footer">
-	by cmolina
+	</div>
+	<div class="middle">
+		<div id="rResult"></div>
+	</div>
+	
+	<div class="end">
+		<button id="rock"></button>
+		<button id="rock"></button>
+		<button id="rock"></button>
+
 	</div>
 </body>
 </html>
