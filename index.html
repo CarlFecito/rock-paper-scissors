@@ -5,33 +5,40 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/styles.css">
-	<title>Rock Paper Scissors</title>
+	<title id="txt" >Rock Paper Scissors</title>
 </head>
 <body>
-	<h1>Rock Paper Scissors</h1>
+	<div class="container">
+	<h1 id="txt" >Rock Paper Scissors</h1>
 
-	<h2>Round</h2>
+	<div id="txt" class="round">Round</div>
 	<div class="top">
 		<div class="left">
-			<div>PLAYER</div>
-			<div id="pPick"></div>
+			<div id="txt" class="topic">PLAYER</div>
+			<div id="pPick" class="wd"></div>
 			<div id="pScore"></div>
 		</div>
 		<div class="right">
-			<div>COMPUTER</div>
-			<div id="cPick"></div>
+			<div id="txt" class="topic">COMPUTER</div>
+			<div id="cPick" class="wd"></div>
 			<div id="cScore"></div>
 		</div>
 	</div>
 	<div class="middle">
-		<div id="rResult"></div>
+		<div id="txt" id="rResult"></div>
 	</div>
 	
+	<div id="txt" class="topic">SELECT YOUR WEAPON</div>
+	<div class="cContainer">
 	<div class="end">
-		<button id="rock"></button>
-		<button id="rock"></button>
-		<button id="rock"></button>
-
+		<button id="rock" class="wd">✊</button>
+		<button id="paper" class="wd">✋</button>
+		<button id="scissors" class="wd">✌️</button>
+		<div id="txt" class="wd">ROCK</div>
+		<div id="txt" class="wd">PAPER</div>
+		<div id="txt" class="wd">SCISSORS</div>
+	</div>
+	</div>
 	</div>
 </body>
 </html>
