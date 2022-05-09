@@ -20,11 +20,13 @@ function computerPlay() {
 }
 
 
+
 /**
  * The function takes the player's selection and compares it to the computer's selection. If the
  * selections are the same, the score is updated. If the player's selection beats the computer's
  * selection, the player's score is updated. If the computer's selection beats the player's selection,
  * the computer's score is updated
+ * @param pSelect - the player's selection
  */
 function playRound(pSelect) {
     const computerSelection = computerPlay()
@@ -53,7 +55,7 @@ function playRound(pSelect) {
 
 /* Updating the score on the page. */
 function updateScore() {
-    scoreDiv.innerHTML = playerScore + ':' + computerScore
+    scoreDiv.innerHTML = playerScore + '-' + computerScore
 }
 
 // update selections
@@ -82,3 +84,4 @@ function computerWeapon(wpn) {
         alert('fatal error')
     }
 }
+

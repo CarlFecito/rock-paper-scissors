@@ -24,6 +24,10 @@ h1 {
 	margin-top: 5px;
 }
 
+#winner {
+	height: 34px;
+}
+
 .result {
 	display: flex;
 	justify-content: space-between;
@@ -45,6 +49,7 @@ h1 {
 
 .middle {
 	display: flex;
+	flex-direction: column;
 	aspect-ratio: 1;
 	justify-content: center;
 	align-items: center;
@@ -139,5 +144,25 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#pPick, #cPick, #score {
+	aspect-ratio: 1;
+    font-size: 100px;
+  	align-items: center;
+  	border: 3px solid #111;
+  	border-radius: 8px;
+  	box-sizing: border-box;
+  	color: #111;
+  	cursor: pointer;
+  	display: flex;
+  	justify-content: center;
+  	line-height: 24px;
+  	position: relative;
+  	text-align: center;
+  	text-decoration: none;
+  	user-select: none;
+  	-webkit-user-select: none;
+  	touch-action: manipulation;
 }
 
