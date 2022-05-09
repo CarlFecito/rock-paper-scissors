@@ -12,11 +12,16 @@ body {
 	justify-content: center;
 }
 
-.container {
+#container {
+	position: relative;
     display: flex;
     flex-direction: column;
 	width: 750px;
 	gap: 10px;
+}
+
+#gameEnd {
+	position: relative;
 }
 
 h1 {
@@ -26,6 +31,7 @@ h1 {
 
 #winner {
 	height: 34px;
+	font-size: 30px;
 }
 
 .result {

@@ -3,6 +3,7 @@ let computerScore = 0;
 scoreDiv = document.getElementById('score')
 playerPick = document.getElementById('pPick')
 computerPick = document.getElementById('cPick')
+roundWinner = document.getElementById('winner')
 
 /* Selecting all the buttons and adding an event listener to each one. */
 const buttons = document.querySelectorAll('button');
@@ -33,21 +34,25 @@ function playRound(pSelect) {
     computerWeapon(computerSelection)
     playerWeapon(pSelect)
     if (pSelect === computerSelection) {
-        updateScore()
+        showRoundWinner('tie')
     } else if (
         pSelect === "rock" &&  computerSelection === "paper" || 
         pSelect === "paper" &&  computerSelection === "scissors" ||
         pSelect === "scissors" &&  computerSelection === "rock" 
         ) { 
+            showRoundWinner('computer')
             computerScore++
             updateScore()
+            checkGameOver(playerScore, computerScore)
     } else if (
         pSelect === "rock" &&  computerSelection === "scissors" || 
         pSelect === "paper" &&  computerSelection === "rock" ||
         pSelect === "scissors" &&  computerSelection === "paper"
         ) {
+            showRoundWinner('player')
             playerScore++
             updateScore()
+            checkGameOver(playerScore, computerScore)
     }else {
         alert("error")
     }
@@ -85,3 +90,41 @@ function computerWeapon(wpn) {
     }
 }
 
+function showRoundWinner(win) {
+    if (win === 'player') {
+        roundWinner.innerHTML = 'YOU WIN!'
+    } else if (win === 'computer') {
+        roundWinner.innerHTML = 'YOU LOSE!'
+    } else if (win === 'tie') {
+        roundWinner.innerHTML = `TIE!`
+    } else {
+        alert('winner error')
+    }
+}
+
+function disabeButtons() {
+    document.querySelectorAll('button').disabled = true
+}
+
+function checkGameOver(player, pc) {
+    if (player === 5) {
+        alertWinner('player')
+    } else if (pc === 5){
+        alertWinner('computer')
+    } else {
+        return null
+    }
+}
+
+function alertWinner(gameWinner) {
+    alert('winner is' + ' ' + gameWinner)
+    gameOver()
+}
+
+function gameOver() {
+    playerScore = 0
+    computerScore = 0
+    playerPick.innerHTML = ` `
+    computerPick.innerHTML = ` `
+    scoreDiv.innerHTML = ` `
+}
