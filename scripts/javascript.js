@@ -1,6 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
 scoreDiv = document.getElementById('score')
+playerPick = document.getElementById('pPick')
+computerPick = document.getElementById('cPick')
 
 /* Selecting all the buttons and adding an event listener to each one. */
 const buttons = document.querySelectorAll('button');
@@ -17,14 +19,17 @@ function computerPlay() {
     return weapons[Math.floor(Math.random() * weapons.length)];
 }
 
-/* The function takes the player's selection and compares it to the computer's selection.
- If the player wins, the player's score increases by one. 
- If the computer wins, the computer's score increases by one. 
- If the player and computer tie, nothing happens */
+
+/**
+ * The function takes the player's selection and compares it to the computer's selection. If the
+ * selections are the same, the score is updated. If the player's selection beats the computer's
+ * selection, the player's score is updated. If the computer's selection beats the player's selection,
+ * the computer's score is updated
+ */
 function playRound(pSelect) {
-    let computerSelection = computerPlay()
-    console.log(computerSelection + "compSel")
-    console.log(pSelect + "pSel")
+    const computerSelection = computerPlay()
+    computerWeapon(computerSelection)
+    playerWeapon(pSelect)
     if (pSelect === computerSelection) {
         updateScore()
     } else if (
@@ -49,4 +54,31 @@ function playRound(pSelect) {
 /* Updating the score on the page. */
 function updateScore() {
     scoreDiv.innerHTML = playerScore + ':' + computerScore
+}
+
+// update selections
+
+function playerWeapon(wpn) {
+    if (wpn === 'rock') {
+        playerPick.innerHTML = `✊`
+    } else if (wpn === 'paper') {
+        playerPick.innerHTML = `✋`
+    } else if (wpn === 'scissors') {
+        playerPick.innerHTML = `✌️`
+    } else {
+        alert('fatal error')
+    }
+    
+}
+
+function computerWeapon(wpn) {
+    if (wpn === 'rock') {
+        computerPick.innerHTML = `✊`
+    } else if (wpn === 'paper') {
+        computerPick.innerHTML = `✋`
+    } else if (wpn === 'scissors') {
+        computerPick.innerHTML = `✌️`
+    } else {
+        alert('fatal error')
+    }
 }
