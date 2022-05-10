@@ -82,6 +82,11 @@ function playerWeapon(wpn) {
     
 }
 
+/**
+ * `computerWeapon` takes a string as an argument and displays the corresponding emoji in the
+ * `computerPick` div
+ * @param wpn - the weapon the computer has chosen
+ */
 function computerWeapon(wpn) {
     if (wpn === 'rock') {
         computerPick.innerHTML = `✊`
@@ -94,6 +99,11 @@ function computerWeapon(wpn) {
     }
 }
 
+/**
+ * If the player wins, display "YOU WIN!" in the roundWinner div. If the computer wins, display "YOU
+ * LOSE!" in the roundWinner div. If it's a tie, display "TIE!" in the roundWinner div
+ * @param win - the winner of the round, either 'player', 'computer', or 'tie'
+ */
 function showRoundWinner(win) {
     if (win === 'player') {
         roundWinner.innerHTML = 'YOU WIN!'
@@ -106,10 +116,13 @@ function showRoundWinner(win) {
     }
 }
 
-function disabeButtons() {
-    document.querySelectorAll('.end button').disabled = true
-}
 
+/**
+ * If the player or computer has 5 points, alert the winner.
+ * @param player - the player's score
+ * @param pc - the number of points the computer has
+ * @returns null.
+ */
 function checkGameOver(player, pc) {
     if (player === 5) {
         alertWinner('player')
@@ -120,6 +133,12 @@ function checkGameOver(player, pc) {
     }
 }
 
+/**
+ * The function takes in a string as an argument, and if the string is 'player', it displays a popup
+ * with the text 'YOU WIN' and the emoji '🥳'. If the string is 'computer', it displays a popup with
+ * the text 'COMPUTER WINS' and the emoji '😔'
+ * @param gameWinner - This is the parameter that will be passed in when the function is called.
+ */
 function alertWinner(gameWinner) {
     showPopup.style.display = "block"
     if (gameWinner === 'player') {
@@ -132,6 +151,10 @@ function alertWinner(gameWinner) {
     gameOver()
 }
 
+/**
+ * The gameOver function resets the player and computer scores to 0, clears the player and computer
+ * picks, clears the score div, and clears the round winner div.
+ */
 function gameOver() {
 
     playerScore = 0
@@ -142,6 +165,7 @@ function gameOver() {
     roundWinner.innerHTML = ` `
 }
 
+/* Hiding the popup when the reset button is clicked. */
 resetGame.addEventListener('click', () => {
     showPopup.style.display = "none"
 })
