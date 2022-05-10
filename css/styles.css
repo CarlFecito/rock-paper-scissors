@@ -170,7 +170,7 @@ h1 {
 	padding: 15px;
 }
 
-button {
+.button {
     aspect-ratio: 1;
     font-size: 100px;
   	align-items: center;
@@ -190,7 +190,7 @@ button {
   	touch-action: manipulation;
 }
 
-button:after {
+.button:after {
   background-color: #111;
   border-radius: 8px;
   content: "";
@@ -205,21 +205,21 @@ button:after {
   z-index: -1;
 }
 
-button:hover:after {
+.button:hover:after {
   transform: translate(0, 0);
 }
 
-button:active {
+.button:active {
   background-color: gray;
   outline: 0;
 }
 
-button:hover {
+.button:hover {
   outline: 0;
 }
 
 @media (min-width: 768px) {
-    button {
+    .button {
     padding: 0 40px;
   }
 }
