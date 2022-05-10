@@ -5,6 +5,7 @@ playerPick = document.getElementById('pPick')
 computerPick = document.getElementById('cPick')
 roundWinner = document.getElementById('winner')
 displayWinner = document.getElementById('alertWin')
+emojiWinner = document.getElementById('emoji')
 showPopup = document.getElementById('overlay')
 resetGame = document.getElementById('reset')
 
@@ -123,8 +124,10 @@ function alertWinner(gameWinner) {
     showPopup.style.display = "block"
     if (gameWinner === 'player') {
         displayWinner.innerHTML = `YOU WIN`
+        emojiWinner.innerHTML = `🥳`
     } else if (gameWinner === 'computer') {
         displayWinner.innerHTML = `COMPUTER WINS`
+        emojiWinner.innerHTML = `😔`
     }
     gameOver()
 }
@@ -139,6 +142,6 @@ function gameOver() {
     roundWinner.innerHTML = ` `
 }
 
-button.addEventListener('click', () => {
-    playRound(button.id)
+resetGame.addEventListener('click', () => {
+    showPopup.style.display = "none"
 })

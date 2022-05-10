@@ -51,6 +51,13 @@ body {
 	height: 120px;
 }
 
+#emoji {
+	aspect-ratio: 1;
+    font-size: 100px;
+  	align-items: center;
+	text-align: center;
+}
+
 #reset {
   background: #fff;
   backface-visibility: hidden;
