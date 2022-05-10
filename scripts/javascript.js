@@ -6,7 +6,7 @@ computerPick = document.getElementById('cPick')
 roundWinner = document.getElementById('winner')
 
 /* Selecting all the buttons and adding an event listener to each one. */
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.end button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playRound(button.id)
@@ -103,7 +103,7 @@ function showRoundWinner(win) {
 }
 
 function disabeButtons() {
-    document.querySelectorAll('button').disabled = true
+    document.querySelectorAll('.end button').disabled = true
 }
 
 function checkGameOver(player, pc) {
