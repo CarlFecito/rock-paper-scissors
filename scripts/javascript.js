@@ -127,4 +127,5 @@ function gameOver() {
     playerPick.innerHTML = ` `
     computerPick.innerHTML = ` `
     scoreDiv.innerHTML = ` `
+    roundWinner.innerHTML = ` `
 }

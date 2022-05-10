@@ -12,6 +12,24 @@ body {
 	justify-content: center;
 }
 
+#overlay {
+    position:absolute;
+   /* display:none; */
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:rgba(0, 0, 0, 0.8);
+    z-index:9999;
+}
+
+#popup {
+	font-size:30px;
+    height:270px;
+	width:720px;
+	text-align: center;
+}
+
 #container {
 	position: relative;
     display: flex;
