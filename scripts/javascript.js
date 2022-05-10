@@ -4,6 +4,9 @@ scoreDiv = document.getElementById('score')
 playerPick = document.getElementById('pPick')
 computerPick = document.getElementById('cPick')
 roundWinner = document.getElementById('winner')
+displayWinner = document.getElementById('alertWin')
+showPopup = document.getElementById('overlay')
+resetGame = document.getElementById('reset')
 
 /* Selecting all the buttons and adding an event listener to each one. */
 const buttons = document.querySelectorAll('.end button');
@@ -117,11 +120,17 @@ function checkGameOver(player, pc) {
 }
 
 function alertWinner(gameWinner) {
-    alert('winner is' + ' ' + gameWinner)
+    showPopup.style.display = "block"
+    if (gameWinner === 'player') {
+        displayWinner.innerHTML = `YOU WIN`
+    } else if (gameWinner === 'computer') {
+        displayWinner.innerHTML = `COMPUTER WINS`
+    }
     gameOver()
 }
 
 function gameOver() {
+
     playerScore = 0
     computerScore = 0
     playerPick.innerHTML = ` `
@@ -129,3 +138,7 @@ function gameOver() {
     scoreDiv.innerHTML = ` `
     roundWinner.innerHTML = ` `
 }
+
+button.addEventListener('click', () => {
+    playRound(button.id)
+})
